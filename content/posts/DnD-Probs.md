@@ -16,18 +16,18 @@ Below we see the probability distributions for rolling a certain number given a 
 
 ``` r
 uni <- rep(.05,20)
-norm <- ggplot(data.frame(uni),aes(x=seq_along(uni),y=uni)) + geom_bar(stat="identity") + 
+norm <- ggplot(data.frame(uni),aes(x=seq_along(uni),y=uni)) + geom_bar(stat="identity") +
   ylab("Probability of Roll") + xlab("Dice Roll") + ylim(c(0,.45)) + ggtitle("Probablity of Normal Dice Roll")
 
 advantage <- seq(1:20)
 for (i in 1:20){
   advantage[i] <- ((2*i-1)/20^2)
 }
-adv <- ggplot(data.frame(advantage),aes(x=seq_along(advantage),y=advantage)) + geom_bar(stat="identity") + 
+adv <- ggplot(data.frame(advantage),aes(x=seq_along(advantage),y=advantage)) + geom_bar(stat="identity") +
   ylab("Probability of Roll") + xlab("Dice Roll") + ylim(c(0,.45)) + ggtitle("Probablity of Dice Roll with Advantage")
 
 disadvantage <- rev(advantage)
-disadv <- ggplot(data.frame(disadvantage),aes(x=seq_along(disadvantage),y=disadvantage)) + geom_bar(stat="identity") + 
+disadv <- ggplot(data.frame(disadvantage),aes(x=seq_along(disadvantage),y=disadvantage)) + geom_bar(stat="identity") +
   ylab("Probability of Roll") + xlab("Dice Roll") + ylim(c(0,.45)) + ggtitle("Probablity of Dice Roll with Disadvantage")
 
 grid.arrange(norm, adv, disadv, ncol=3)
@@ -88,7 +88,7 @@ success <- vapply(0:20, function(x) sum(encounter[encounter[,1] < (encounter[,2]
 adv_success <- vapply(0:20, function(x) sum(encounter[encounter[,1] < (encounter[,2] + x), 7]), numeric(1))
 disadv_success <- vapply(0:20, function(x) sum(encounter[encounter[,1] < (encounter[,2] + x), 8]), numeric(1))
 
-g <- ggplot() + 
+g <- ggplot() +
   geom_line(aes(seq_along(success)-1,success, color="Normal"), data.frame(success),size=1) +
   geom_line(aes(seq_along(adv_success)-1,adv_success, colour="Advantage"), data.frame(adv_success),size=1) +
   geom_line(aes(seq_along(disadv_success)-1,disadv_success, colour="Disadvantage"), data.frame(disadv_success),size=1) +
