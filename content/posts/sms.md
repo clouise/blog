@@ -52,7 +52,7 @@ computers and both have the desktop client, these numbers seem
 reasonable to me.
 
 The next graph is my a count of received messages over time since we
-started dating. I've used Loess smoothing help make some sense of the
+started dating. I've used Loess smoothing to help make some sense of the
 graph, it's really cool stuff, you can read about it
 [here.](https://en.wikipedia.org/wiki/Local_regression)
 
@@ -111,5 +111,5 @@ are the 'Most Carmen' and 'Most Girlfriend' words.
 
 Note: I promise I didn't text her the word 'statistics' over and over
 prior to downloading the data to artificially bring that word to the
-top, but I did include to top 6 words, as opposed to 5, to make sure it
+top, but I did include the top 6 words, as opposed to 5, to make sure it
 was included.
