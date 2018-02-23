@@ -1,5 +1,5 @@
 ---
-title: "Mixed Effect Models"
+title: "Mixed Effects Models"
 date: 2018-02-22
 draft: False
 #featuredImage : "img/dndprob.jpg"
